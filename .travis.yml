@@ -1,0 +1,15 @@
+language: cpp
+dist: bionic
+
+script:
+  - set -e
+  - cmake .
+  - cmake --build .
+  - cmake --build . --target test
+  - cmake --build . --target package
+deploy:
+  - provider: bintray
+    file: bintray.json
+    user: khatrox
+    key: ${BINTRAY_API}
+    skip_cleanup: true
