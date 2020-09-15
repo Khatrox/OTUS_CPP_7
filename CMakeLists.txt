@@ -35,8 +35,8 @@ target_include_directories(BulkLibrary PUBLIC ${CMAKE_SOURCE_DIR}/src)
 
 target_link_libraries(bulk PRIVATE BulkLibrary)
 
-add_subdirectory(${CMAKE_SOURCE_DIR}/test)
 enable_testing()
+add_subdirectory(${CMAKE_SOURCE_DIR}/test)
 
 install(TARGETS bulk RUNTIME DESTINATION bin)
 set(CPACK_GENERATOR DEB)
